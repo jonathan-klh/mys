@@ -30,13 +30,6 @@ class Shop
     private $nom;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="type", type="integer")
-     */
-    private $type;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255)
@@ -91,30 +84,6 @@ class Shop
     public function getNom()
     {
         return $this->nom;
-    }
-
-    /**
-     * Set type
-     *
-     * @param integer $type
-     *
-     * @return Shop
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
     }
 
     /**
