@@ -49,6 +49,12 @@ class Product
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Shop", inversedBy="products")
+     * @ORM\JoinColumn(name="shop_id", referencedColumnName="id")
+     */
+    private $shop;
+
 
     /**
      * Get id
@@ -155,5 +161,28 @@ class Product
     {
         return $this->description;
     }
-}
 
+    /**
+     * Set shop
+     *
+     * @param \AppBundle\Entity\Shop $shop
+     *
+     * @return Product
+     */
+    public function setShop(\AppBundle\Entity\Shop $shop = null)
+    {
+        $this->shop = $shop;
+
+        return $this;
+    }
+
+    /**
+     * Get shop
+     *
+     * @return \AppBundle\Entity\Shop
+     */
+    public function getShop()
+    {
+        return $this->shop;
+    }
+}
