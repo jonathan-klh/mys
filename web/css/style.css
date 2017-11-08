@@ -1,0 +1,11 @@
+/* Extra small devices (phones, less than 768px) => Taille xs */
+/* Pas de media queries de base pour un bon design il faut partir de la version MOBILE*/
+
+/* Small devices (tablets, 768px and up) => Taille sm */
+@media (min-width: 768px) {  }
+
+/* Medium devices (desktops, 992px and up) => Taille md */
+@media (min-width: 992px) {  }
+
+/* Large devices (large desktops, 1200px and up) => Taille lg*/
+@media (min-width: 1200px) {  }
