@@ -33,4 +33,19 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+    <h1>Produits du magasin "{{ shop.nom }}"</h1>
+
+            <a href="{{ path('product_new', { 'id': shop.id }) }}">New</a>
+    {% for product in shop.products %}
+        <div>
+            <a href="{{ path('product_edit', { 'id': product.id }) }}">Edit</a>
+            <a href="{{ path('product_delete', { 'id': product.id }) }}">delete</a>
+            <a href="{{ path('product_show', { 'id': product.id }) }}">show</a>
+            {{ product.nom }}
+            {{ product.codeBarre }}
+            {{ product.prix }}
+            {{ product.description }}
+        </div>
+    {% endfor %}
 {% endblock %}
