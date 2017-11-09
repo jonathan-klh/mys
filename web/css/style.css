@@ -87,3 +87,13 @@ header .nav-menu-right li a span.glyphicon {
 
 /* Large devices (large desktops, 1200px and up) => Taille lg*/
 @media (min-width: 1200px) {  }
+
+/* --------------------- SLIDER ------------------------ */
+.mySlides {
+    display:none;
+    margin:1em;
+}
+
+.searchBar{
+    margin:1em;
+}
