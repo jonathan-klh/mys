@@ -11,15 +11,49 @@
     </head>
     <body>
         <header>
+            <div class="container-fluid">
+                <div id="mySidenav" class="sidenav">
+                    <div> 
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="#">Mes shops</a>
+                        <a href="#">Mon compte</a>
+                        <a href="#">Panier</a>
+                    </div>
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-menu-left">
+                        <li><!-- Bouton qui ouvre la sidebar -->
+                            <a href="#" title="Menu" onclick="openNav()">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav-menu-right">
+                        <li><a href="#" title="Mon compte"><span id="my-account">Mon compte<span class="glyphicon glyphicon-user"></span></span></a></li>
+                        <li><a href="#" title="Panier"><span id="shopping-cart">Panier<span class="glyphicon glyphicon-shopping-cart"></span></span></a></li>
+                    </ul>
+                </div>
+            </div>
         </header>
         <main>
-            <div class="container">
+            <div class="container-fluid">
                 {% block body %}{% endblock %}
             </div>
         </main>
         <footer>
         </footer>
         {% block javascripts %}{% endblock %}
+        <script>
+            /* Set the width of the side navigation to 250px */
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            /* Set the width of the side navigation to 0 */
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
         <script src="/js/jquery/jquery-3.2.1.min.js"></script>
         <script src="/bootstrap/js/bootstrap.min.js"></script>
     </body>
