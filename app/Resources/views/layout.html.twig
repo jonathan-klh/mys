@@ -15,9 +15,12 @@
                 <div id="mySidenav" class="sidenav">
                     <div> 
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="#">Mes shops</a>
-                        <a href="#">Mon compte</a>
-                        <a href="#">Panier</a>
+                        <a href="{{ path('fos_user_profile_show') }}" title="Mon compte"><span class="glyphicon glyphicon-user"></span>Mon compte</a>
+                        <a href="#" tilte="Mon panier"><span class="glyphicon glyphicon-shopping-cart"></span>Panier</a>
+                        <a href="#" title="Mes shops"><span class="glyphicon glyphicon-home"></span>Mes shops</a>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a href="{{ path('fos_user_security_logout') }}" title="Se déconnecter" class="logout"><span><span class="glyphicon glyphicon-log-out"></span> Se déconnecter</span></a>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="nav-menu">
@@ -29,7 +32,14 @@
                         </li>
                     </ul>
                     <ul class="nav-menu-right">
-                        <li><a href="#" title="Mon compte"><span id="my-account">Mon compte<span class="glyphicon glyphicon-user"></span></span></a></li>
+                        <li class="hidden-xs">
+                            <a href="{{ path('fos_user_profile_show') }}" title="Mon compte"><span id="my-account">Mon compte<span class="glyphicon glyphicon-user"></span></span></a>
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <ul>
+                                <li><a href="{{ path('fos_user_security_logout') }}" title="Se déconnecter"><span><span class="glyphicon glyphicon-log-out"></span> Se déconnecter</span></a></li>
+                            </ul>
+                            {% endif %}
+                        </li>
                         <li><a href="#" title="Panier"><span id="shopping-cart">Panier<span class="glyphicon glyphicon-shopping-cart"></span></span></a></li>
                     </ul>
                 </div>
